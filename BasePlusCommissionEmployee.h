@@ -1,12 +1,8 @@
-// BasePlusCommissionEmployee class derived from class 
-// CommissionEmployee.
+// BasePlusCommissionEmployee class derived from Employee.
 #ifndef BASEPLUS_H
 #define BASEPLUS_H
-
-#include <string> // C++ standard string class
-using std::string;
-
-#include "CommissionEmployee.h" // CommissionEmployee class declaration
+// CommissionEmployee class definition
+#include "CommissionEmployee.h"
 
 class BasePlusCommissionEmployee : public CommissionEmployee
 {
@@ -17,10 +13,12 @@ public:
 	void setBaseSalary(double); // set base salary
 	double getBaseSalary() const; // return base salary
 
+								  // keyword virtual signals intent to override
 	virtual double earnings() const; // calculate earnings
-	virtual void print() const; // print BasePlusCommissionEmployee object
+									 // print BasePlusCommissionEmployee object
+	virtual void print() const;
 private:
-	double baseSalary; // base salary
+	double baseSalary; // base salary per week
 }; // end class BasePlusCommissionEmployee
 
-#endif
+#endif // BASEPLUS_H
